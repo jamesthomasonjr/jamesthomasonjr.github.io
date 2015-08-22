@@ -9,8 +9,16 @@
  */
 namespace JamesThomasonJr;
 
+/**
+ * The main Application
+ */
 class Application
 {
+    /**
+     * The application's main procedure
+     *
+     * @return Application $this
+     */
     public function main() : Application
     {
         printf("%s\n", "Hello, world!");
