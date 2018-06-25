@@ -32,7 +32,7 @@ html, body {
 }
 
 .nav__link {
-  float: left;
+  display: inline;
 }
 
 .nav .nav__link:after {
