@@ -12,12 +12,20 @@ html, body {
 .main {
   display: grid;
   grid-template-areas:
+    "navigation"
+    "title"
+    "content"
+    "footer";
+  width: 100vw;
+  height: 100vh;
+}
+
+.main.main--sidebar {
+  grid-template-areas:
     "navigation  navigation"
     "title       sidebar"
     "content     sidebar"
     "footer      footer";
-  width: 100vw;
-  height: 100vh;
 }
 
 .main.main--splash {
