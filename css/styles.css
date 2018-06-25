@@ -12,10 +12,10 @@ html, body {
 .main {
   display: grid;
   grid-template-areas:
-    "navigation" "navigation"
-    "title"      "sidebar"
-    "content"    "sidebar"
-    "footer"     "footer";
+    "navigation  navigation"
+    "title       sidebar"
+    "content     sidebar"
+    "footer      footer";
   width: 100vw;
   height: 100vh;
 }
@@ -25,15 +25,16 @@ html, body {
     "title"
     "navigation";
   align-content: center;
-  text-align: center;
 }
 
 .main__title {
   grid-area: title;
+  text-align: center;
 }
 
 .main__nav {
   grid-area: navigation;
+  text-align: center;
 }
 
 .nav {
