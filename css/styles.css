@@ -9,22 +9,31 @@ html, body {
   height: 100%;
 }
 
-.splash {
+.main {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: 1fr auto auto 1fr;
+  grid-template-areas:
+    "navigation" "navigation"
+    "title"      "sidebar"
+    "content"    "sidebar"
+    "footer"     "footer";
   width: 100vw;
   height: 100vh;
 }
 
-.splash__title {
-  grid-area: 2 / 2 / 3 / 3;
+.main.main--splash {
+  grid-template-areas:
+    "title"
+    "navigation";
+  align-content: center;
   text-align: center;
 }
 
-.splash__nav {
-  grid-area: 3 / 2 / 4 / 3;
-  text-align: center;
+.main__title {
+  grid-area: title;
+}
+
+.main__nav {
+  grid-area: navigation;
 }
 
 .nav {
@@ -46,3 +55,4 @@ html, body {
   margin-right: 0;
   content: "";
 }
+
