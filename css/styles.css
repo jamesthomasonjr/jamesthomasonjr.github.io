@@ -11,37 +11,49 @@ html, body {
 
 .main {
   display: grid;
-  grid-template-areas:
-    "navigation"
-    "title"
-    "content"
-    "footer";
+  grid-template-columns:
+    [full-start left-start]
+    auto
+    [left-end center-start]
+    1fr
+    [center-end right-start]
+    auto
+    [right-end full-end];
+  grid-template-rows:
+    [navigation-start]
+    auto
+    [navigation-end title-start sidebar-start]
+    auto
+    [title-end content-start]
+    auto
+    [content-end sidebar-end footer-start]
+    auto
+    [footer-end];
   width: 100vw;
   height: 100vh;
 }
 
-.main.main--sidebar {
-  grid-template-areas:
-    "navigation  navigation"
-    "title       sidebar"
-    "content     sidebar"
-    "footer      footer";
-}
-
 .main.main--splash {
-  grid-template-areas:
-    "title"
-    "navigation";
+  grid-template-columns:
+    [full-start center-start]
+    auto
+    [full-end center-end];
+  grid-template-rows:
+    [title-start]
+    auto
+    [title-end navigation-start]
+    auto
+    [navigation-end];
   align-content: center;
 }
 
 .main__title {
-  grid-area: title;
+  grid-area: title / center;
   text-align: center;
 }
 
 .main__nav {
-  grid-area: navigation;
+  grid-area: navigation / full;
   text-align: center;
 }
 
