@@ -11,6 +11,14 @@ html, body {
   color: #ecf0f1;
 }
 
+a:link, a:visited {
+  color: #2980b9;
+}
+
+a:hover, a:active {
+  color: #3498db;
+}
+      
 .main {
   display: grid;
   grid-template-columns:
