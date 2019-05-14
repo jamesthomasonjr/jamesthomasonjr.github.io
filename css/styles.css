@@ -18,7 +18,23 @@ a:link, a:visited {
 a:hover, a:active {
   color: #3498db;
 }
-      
+
+h1,h2 {
+  padding: 8px 0;
+}
+
+h1 {
+  color: #ecf0f1;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+h2 {
+  color: #95a5a6;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
 .main {
   display: grid;
   grid-template-columns:
