@@ -7,6 +7,8 @@
 html, body {
   width: 100%;
   height: 100%;
+  background-color: #2c3e50;
+  color: #ecf0f1;
 }
 
 .main {
@@ -61,17 +63,17 @@ html, body {
   list-style-type: none;
 }
 
-.nav__link {
+.nav__item {
   display: inline;
 }
 
-.nav .nav__link:after {
+.nav .nav__item:after {
   margin-left: 1em;
   margin-right: 1em;
   content: "|";
 }
 
-.nav .nav__link:last-child:after {
+.nav .nav__item:last-child:after {
   margin-left: 0;
   margin-right: 0;
   content: "";
