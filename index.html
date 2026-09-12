@@ -1,44 +1,278 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>jamesthomasonjr.com</title>
-  <meta name="description" content="James Thomason, Jr personal site">
-  <meta name="author" content="James Thomason, Jr">
+  <title>James Thomason, Jr. — Developer tools and agent systems</title>
+  <meta name="description" content="James Thomason, Jr. is a software engineer building developer tools and human + agent systems. Currently building Stations.dev as an independent founding engineer.">
+  <meta name="author" content="James Thomason, Jr.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0d0d">
 
-  <link rel="stylesheet" href="/css/styles.css?v=1.0.3">
+  <link rel="canonical" href="https://jamesthomasonjr.com/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="James Thomason, Jr. — Developer tools and agent systems">
+  <meta property="og:description" content="James Thomason, Jr. is a software engineer building developer tools and human + agent systems. Currently building Stations.dev as an independent founding engineer.">
+  <meta property="og:url" content="https://jamesthomasonjr.com/">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="/css/styles.css?v=2.0.0">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"James Thomason, Jr.","url":"https://jamesthomasonjr.com/","email":"james@jamesthomasonjr.com","jobTitle":"Founding Engineer (Independent)","description":"Software engineer building developer tools and human + agent systems.","sameAs":["https://github.com/jamesthomasonjr","https://www.linkedin.com/in/jamesthomasonjr","https://stations.dev"]}</script>
 </head>
 <body>
-  <header>
-  </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="main main--splash">
+  <header class="masthead">
+    <div class="masthead__inner shell">
+      <a class="masthead__id" href="/">
+        <span class="masthead__name">James Thomason, Jr.</span>
+        <span class="masthead__slash" aria-hidden="true">//</span>
+        <span class="masthead__role">dev</span>
+      </a>
 
-    <nav class="main__nav">
-        <ul class="nav">
-            <li class="nav__item">
-              <a class="nav__link" href="https://j80.dev">Personal Programming</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="https://plusplus.dev">Developer Tools</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="https://syllabary.tech">Software Consulting</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link" href="https://hopartistry.com">Homebrewing</a>
-            </li>
+      <nav class="masthead__nav" aria-label="Sections">
+        <ul class="navlist">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#outside">Outside</a></li>
         </ul>
       </nav>
-    
-      <section class="main__title">
-        <h1>James Thomason, Jr</h1>
-        <h2>Father | Gamer | Software Engineer | Homebrewer</h2>
-      </section></main>
 
-  <footer>
+      <div class="masthead__actions">
+        <a class="pill pill--status" href="https://stations.dev"><span class="dot" aria-hidden="true"></span>Building Stations.dev
+        </a>
+        <a class="pill" href="/resume/">Résumé
+        </a>
+        <a class="pill" href="https://github.com/jamesthomasonjr">GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell" id="main" tabindex="-1">
+
+    <section class="hero" aria-labelledby="hero-name">
+      <h1 class="hero__name" id="hero-name">James Thomason, Jr.</h1>
+      <p class="hero__tagline">Software engineer building developer tools and human + agent systems.</p>
+
+      <div class="hero__body">
+        <p>My work centers on developer interfaces, agent workflows and orchestration, context systems, guardrails, and reliable execution — the parts of agentic software that decide whether it can be trusted with real work.</p>
+        <p>I'm currently building <a class="link" href="https://stations.dev">Stations.dev</a> as an independent founding engineer, alongside open-source tooling for agentic software.</p>
+      </div>
+
+      <ul class="chips" aria-label="Profiles and contact">
+        <li>
+          <a class="chip" href="https://github.com/jamesthomasonjr">github/jamesthomasonjr</a>
+        </li>
+        <li>
+          <a class="chip" href="https://www.linkedin.com/in/jamesthomasonjr">linkedin/jamesthomasonjr</a>
+        </li>
+        <li>
+          <a class="chip" href="https://stations.dev">stations.dev</a>
+        </li>
+        <li>
+          <a class="chip" href="/resume/">Résumé</a>
+        </li>
+        <li>
+          <a class="chip" href="mailto:james@jamesthomasonjr.com">james@jamesthomasonjr.com</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">01 //</span>
+        <h2 class="section__title" id="work-heading">Current Work</h2>
+      </div>
+
+      <article class="flagship panel">
+        <div class="flagship__head">
+          <h3 class="flagship__name">Stations.dev</h3>
+          <p class="flagship__status">
+            <span class="dot" aria-hidden="true"></span>
+            In active development <span class="sep" aria-hidden="true">//</span> Founding Engineer
+          </p>
+        </div>
+
+        <p class="flagship__tagline">Executable workflows for humans + agents.</p>
+        <p class="flagship__description">Stations is an agent-native work execution platform where humans and agents work through the same structured processes, with explicit actors, artifacts, gates, dependencies, and approvals.</p>
+
+        <ul class="tags" aria-label="Core primitives">
+          <li class="tag">Actors</li>
+          <li class="tag">Artifacts</li>
+          <li class="tag">Gates</li>
+          <li class="tag">Dependencies</li>
+          <li class="tag">Approvals</li>
+        </ul>
+
+        <p class="flagship__link">
+          <a href="https://stations.dev">stations.dev <span aria-hidden="true">&rarr;</span></a>
+        </p>
+      </article>
+
+      <ul class="grid grid--projects">
+        <li>
+          <article class="card panel">
+            <div class="card__head">
+              <h3 class="card__name">Supersuit</h3>
+              <span class="status status--public_repo">public_repo</span>
+            </div>
+            <p class="card__tagline">Composable workflows for coding agents.</p>
+            <p class="card__description">An agent workflow platform for composing software-development processes without hard-coding a methodology into the harness. Its primitives are designed to express established approaches such as Superpowers, GSD, and SpecKit, as well as custom team workflows.</p>
+            <p class="card__foot">
+              <a href="https://github.com/jeighty/supersuit">github/jeighty/supersuit <span aria-hidden="true">&#8599;</span></a>
+            </p>
+          </article>
+        </li>
+        <li>
+          <article class="card panel">
+            <div class="card__head">
+              <h3 class="card__name">Agent Skills</h3>
+              <span class="status status--public_repo">public_repo</span>
+            </div>
+            <p class="card__tagline">Reusable capabilities for coding agents.</p>
+            <p class="card__description">A collection of portable skills for codebase orientation, debugging, multi-agent code review, work prioritization, handoffs, and other software-engineering workflows.</p>
+            <p class="card__foot">
+              <a href="https://github.com/jamesthomasonjr/skills">github/jamesthomasonjr/skills <span aria-hidden="true">&#8599;</span></a>
+            </p>
+          </article>
+        </li>
+        <li>
+          <article class="card panel">
+            <div class="card__head">
+              <h3 class="card__name">Fleet</h3>
+              <span class="status status--private_preview">private_preview</span>
+            </div>
+            <p class="card__tagline">Orchestration for fleets of coding agents.</p>
+            <p class="card__description">A harness-agnostic evolution of my multi-agent tooling for coordinating coding agents across repositories, tasks, and execution environments.</p>
+            <p class="card__foot card__foot--note">Repository private // public release planned</p>
+          </article>
+        </li>
+        <li>
+          <article class="card panel">
+            <div class="card__head">
+              <h3 class="card__name">Vic — Visual Context</h3>
+              <span class="status status--in_development">in_development</span>
+            </div>
+            <p class="card__tagline">A headless agent harness and context editor inspired by Vim and Neovim.</p>
+            <p class="card__description">Vic explores what a Vim-like environment could look like for the agent age: context as an editable developer resource, a small headless core, semantic commands and actions, protocol-separated interfaces, pluggable providers, and extensibility built around agent workflows rather than text files.</p>
+            <p class="card__foot card__foot--note">Repository private // public release planned</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">02 //</span>
+        <h2 class="section__title" id="about-heading">About</h2>
+      </div>
+
+      <p class="prose">I&#39;ve spent my career building full-stack products, developer platforms, infrastructure, and tools. More recently, my work has moved toward agentic software — not only using AI to build software, but building the systems around agents that make them more useful to developers and teams.</p>
+
+      <div class="panel trajectory">
+        <h3 class="trajectory__title">Trajectory</h3>
+        <dl class="trajectory__list">
+          <div class="trajectory__entry">
+            <dt>
+              <span class="trajectory__period">Current</span>
+              <span class="trajectory__dates">Aug 2026 — Present</span>
+            </dt>
+            <dd>
+              <strong>Founding Engineer (Independent)</strong>, Stations.dev — Building an agent-native work execution platform for humans and autonomous agents.
+            </dd>
+          </div>
+          <div class="trajectory__entry">
+            <dt>
+              <span class="trajectory__period">Previous</span>
+              <span class="trajectory__dates">Jun 2022 — Aug 2026</span>
+            </dt>
+            <dd>
+              <strong>Software Development Engineer II</strong>, Amazon — Built AI workflow platforms, experimentation systems, cloud infrastructure, and developer tooling.
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <p class="prose prose--philosophy">
+        <strong>Core engineering philosophy:</strong> Strip friction away from cognitive work. Reliable engineering systems aren&#39;t built through opaque autonomous magic; they need explicit state, clear boundaries, observable behavior, and good ergonomics so humans and agents can work together effectively.
+      </p>
+    </section>
+
+    <section class="section" id="profile" aria-labelledby="profile-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">03 //</span>
+        <h2 class="section__title" id="profile-heading">Technical Profile</h2>
+      </div>
+
+      <dl class="panel matrix">
+        <div class="matrix__row">
+          <dt class="matrix__label">Focus</dt>
+          <dd class="matrix__values">Developer Tooling · Agent Systems · Platform Engineering · Distributed Systems · Full-Stack Architecture</dd>
+        </div>
+        <div class="matrix__row">
+          <dt class="matrix__label">Languages &amp; Runtimes</dt>
+          <dd class="matrix__values">TypeScript · Node.js · Python · Go · Java</dd>
+        </div>
+        <div class="matrix__row">
+          <dt class="matrix__label">Platforms</dt>
+          <dd class="matrix__values">AWS · Kubernetes · PostgreSQL · Docker · OpenTofu / Terraform · GitHub Actions</dd>
+        </div>
+        <div class="matrix__row">
+          <dt class="matrix__label">Agent Systems</dt>
+          <dd class="matrix__values">Multi-Agent Systems · Human-in-the-Loop · MCP · Bedrock · RAG</dd>
+        </div>
+        <div class="matrix__row">
+          <dt class="matrix__label">Current</dt>
+          <dd class="matrix__values">Stations.dev · Supersuit · Agent Skills · Fleet · Vic</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section" id="outside" aria-labelledby="outside-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">04 //</span>
+        <h2 class="section__title" id="outside-heading">Outside Software</h2>
+      </div>
+
+      <p class="prose">I&#39;m a dad, gamer, homebrewer, and habitual tinkerer. Most of my side projects begin because I want a tool that doesn&#39;t quite exist yet.</p>
+
+      <ul class="grid grid--outside">
+        <li class="soft-card">
+          <h3 class="soft-card__name">Fatherhood</h3>
+          <p class="soft-card__description">Dad first — most of what happens outside of work happens with my family.</p>
+        </li>
+        <li class="soft-card">
+          <h3 class="soft-card__name">Homebrewing</h3>
+          <p class="soft-card__description">Brewing beer at home: process tinkering with a drinkable result.</p>
+        </li>
+        <li class="soft-card">
+          <h3 class="soft-card__name">Gaming</h3>
+          <p class="soft-card__description">A long-running hobby, and a reliable source of ideas for side projects.</p>
+        </li>
+        <li class="soft-card">
+          <h3 class="soft-card__name">Tinkering</h3>
+          <p class="soft-card__description">Homelab hardware, self-hosted services, and small tools built for an audience of one.</p>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner shell">
+      <p class="footer__copy">&copy; 2026 James Thomason, Jr.</p>
+      <ul class="footer__links">
+        <li><a href="https://github.com/jamesthomasonjr">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jamesthomasonjr">LinkedIn</a></li>
+        <li><a href="https://stations.dev">Stations.dev</a></li>
+        <li><a href="/resume/">Résumé</a></li>
+        <li><a href="mailto:james@jamesthomasonjr.com">Email</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
