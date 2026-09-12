@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx eleventy",
+    "build:resume": "node scripts/build-resume.mjs",
     "serve": "npx eleventy --serve",
     "debug": "DEBUG=* npx eleventy"
   },
