@@ -10,8 +10,8 @@
   --bg-inset: #0f1212;
 
   --text: #e8ecea;
-  --text-secondary: #b3bcb8;
-  --text-muted: #8a938f;
+  --text-secondary: #c3cbc7;
+  --text-muted: #939c98;
 
   --border: #202624;
   --border-strong: #2c3432;
@@ -25,7 +25,7 @@
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", Menlo,
     Consolas, "Liberation Mono", monospace;
 
-  --shell: 50rem;
+  --shell: 52rem;
   --gutter: 1.5rem;
 
   --radius: 3px;
@@ -68,8 +68,8 @@ body {
   background-color: var(--bg);
   color: var(--text-secondary);
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1.0625rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -236,7 +236,7 @@ strong {
 /* Hero -------------------------------------------------------------------- */
 
 .hero {
-  padding-block: 5rem 4rem;
+  padding-block: 4.5rem 3.5rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -251,19 +251,21 @@ strong {
 .hero__tagline {
   margin-top: 1.25rem;
   color: var(--text);
-  font-size: clamp(1.1rem, 2.6vw, 1.3rem);
-  font-weight: 500;
-  line-height: 1.45;
-  max-width: 46ch;
+  font-size: clamp(1.25rem, 2.9vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  max-width: 44ch;
 }
 
 .hero__body {
   margin-top: 1.75rem;
+  font-size: 1.08rem;
   padding-left: 1.25rem;
   border-left: 2px solid var(--border-strong);
   display: grid;
   gap: 1rem;
-  max-width: 62ch;
+  max-width: 66ch;
 }
 
 .chips {
@@ -292,7 +294,7 @@ strong {
 /* Sections ---------------------------------------------------------------- */
 
 .section {
-  padding-block: 4rem;
+  padding-block: 3.25rem;
   scroll-margin-top: 4.5rem;
   border-bottom: 1px solid var(--border);
 }
@@ -305,7 +307,7 @@ strong {
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .section__index {
@@ -372,13 +374,13 @@ strong {
 .flagship__tagline {
   margin-top: 1rem;
   color: var(--text);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   font-weight: 500;
 }
 
 .flagship__description {
   margin-top: 0.75rem;
-  max-width: 64ch;
+  max-width: 66ch;
 }
 
 .tags {
@@ -441,7 +443,7 @@ strong {
 
 .card__name {
   color: var(--text);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
@@ -459,13 +461,13 @@ strong {
 .card__tagline {
   margin-top: 0.75rem;
   color: var(--text);
-  font-size: 0.98rem;
+  font-size: 1.04rem;
   font-weight: 500;
 }
 
 .card__description {
   margin-top: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .card__foot {
@@ -512,7 +514,7 @@ strong {
 
 .trajectory__entry {
   display: grid;
-  grid-template-columns: 9rem 1fr;
+  grid-template-columns: 10.5rem 1fr;
   gap: 0.25rem 1.5rem;
 }
 
@@ -536,7 +538,7 @@ strong {
 }
 
 .trajectory__entry dd {
-  font-size: 0.98rem;
+  font-size: 1.02rem;
 }
 
 /* Technical profile matrix ------------------------------------------------ */
@@ -547,7 +549,7 @@ strong {
 
 .matrix__row {
   display: grid;
-  grid-template-columns: 9rem 1fr;
+  grid-template-columns: 10.5rem 1fr;
   gap: 0.25rem 1.5rem;
   padding-block: 1rem;
   border-bottom: 1px solid var(--border);
@@ -568,15 +570,15 @@ strong {
 
 .matrix__values {
   color: var(--text);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
 }
 
 /* Earlier work ------------------------------------------------------------ */
 
 .earlier {
   display: grid;
-  gap: 1.75rem;
-  max-width: 68ch;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem 2.5rem;
 }
 
 .earlier__item {
@@ -586,13 +588,13 @@ strong {
 
 .earlier__name {
   color: var(--text);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
 .earlier__description {
   margin-top: 0.25rem;
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
 
 .earlier__link {
@@ -632,7 +634,7 @@ strong {
 
 .soft-card__description {
   margin-top: 0.35rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* Footer ------------------------------------------------------------------ */

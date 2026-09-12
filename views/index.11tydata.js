@@ -103,7 +103,7 @@ module.exports = function() {
       trajectory: [
         {
           period: "Current",
-          dates: "2026 — Present",
+          dates: "Aug 2026 — Present",
           role: "Founding Engineer (Independent)",
           org: "Stations.dev",
           summary:
@@ -111,7 +111,7 @@ module.exports = function() {
         },
         {
           period: "Previous",
-          dates: "2022 — 2026",
+          dates: "Jun 2022 — Aug 2026",
           role: "Software Development Engineer II",
           org: "Amazon",
           summary:
@@ -133,7 +133,7 @@ module.exports = function() {
           "Full-Stack Architecture",
         ],
       },
-      { label: "Languages", values: ["TypeScript", "Node.js", "Python", "Go", "Java"] },
+      { label: "Languages & Runtimes", values: ["TypeScript", "Node.js", "Python", "Go", "Java"] },
       {
         label: "Platforms",
         values: ["AWS", "Kubernetes", "PostgreSQL", "Docker", "OpenTofu / Terraform", "GitHub Actions"],
@@ -158,7 +158,7 @@ module.exports = function() {
         {
           name: "Hal / hal-core",
           description:
-            "Deployment orchestration tooling I worked on during my time at Quicken Loans.",
+            "Build and deployment orchestration tooling I developed while at Quicken Loans.",
         },
       ],
       note: "Older projects remain available as archived repositories on GitHub.",
