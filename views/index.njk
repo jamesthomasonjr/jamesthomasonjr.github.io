@@ -20,22 +20,7 @@
 
   <link rel="stylesheet" href="/css/styles.css?v=2.0.0">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "{{ author.name }}",
-    "url": "{{ site.url }}/",
-    "email": "{{ author.email }}",
-    "jobTitle": "{{ author.jobTitle }}",
-    "description": "{{ author.tagline }}",
-    "sameAs": [
-      "{{ site.links.github }}",
-      "{{ site.links.linkedin }}",
-      "{{ site.links.stations }}"
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{{ jsonLd | dump | safe }}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -58,7 +43,7 @@
 
       <div class="masthead__actions">
         {%- for action in headerActions %}
-        <a class="pill{% if action.status %} pill--status{% endif %}" href="{{ action.href }}"{% if action.external %} rel="noopener"{% endif %}>
+        <a class="pill{% if action.status %} pill--status{% endif %}" href="{{ action.href }}">
           {%- if action.status %}<span class="dot" aria-hidden="true"></span>{% endif -%}
           {{ action.label }}
         </a>
@@ -67,7 +52,7 @@
     </div>
   </header>
 
-  <main class="shell" id="main">
+  <main class="shell" id="main" tabindex="-1">
 
     <section class="hero" aria-labelledby="hero-name">
       <h1 class="hero__name" id="hero-name">{{ author.name }}</h1>
@@ -75,13 +60,13 @@
 
       <div class="hero__body">
         <p>{{ hero.narrative }}</p>
-        <p>{{ hero.status | safe }}</p>
+        <p>I'm currently building <a class="link" href="{{ site.links.stations }}">Stations.dev</a> as an independent founding engineer, alongside open-source tooling for agentic software.</p>
       </div>
 
       <ul class="chips" aria-label="Profiles and contact">
         {%- for link in hero.links %}
         <li>
-          <a class="chip" href="{{ link.href }}"{% if link.external %} rel="noopener"{% endif %}>{{ link.label }}</a>
+          <a class="chip" href="{{ link.href }}">{{ link.label }}</a>
         </li>
         {%- endfor %}
       </ul>
@@ -112,7 +97,7 @@
         </ul>
 
         <p class="flagship__link">
-          <a href="{{ flagship.link.href }}" rel="noopener">{{ flagship.link.label }} <span aria-hidden="true">&rarr;</span></a>
+          <a href="{{ flagship.link.href }}">{{ flagship.link.label }} <span aria-hidden="true">&rarr;</span></a>
         </p>
       </article>
 
@@ -128,7 +113,7 @@
             <p class="card__description">{{ project.description }}</p>
             {%- if project.repo %}
             <p class="card__foot">
-              <a href="{{ project.repo.href }}" rel="noopener">{{ project.repo.label }} <span aria-hidden="true">&#8599;</span></a>
+              <a href="{{ project.repo.href }}">{{ project.repo.label }} <span aria-hidden="true">&#8599;</span></a>
             </p>
             {%- else %}
             <p class="card__foot card__foot--note">{{ project.note }}</p>
@@ -210,7 +195,7 @@
       <p class="footer__copy">&copy; {{ site.year }} {{ author.name }}</p>
       <ul class="footer__links">
         {%- for link in footerLinks %}
-        <li><a href="{{ link.href }}"{% if link.external %} rel="noopener"{% endif %}>{{ link.label }}</a></li>
+        <li><a href="{{ link.href }}">{{ link.label }}</a></li>
         {%- endfor %}
       </ul>
     </div>

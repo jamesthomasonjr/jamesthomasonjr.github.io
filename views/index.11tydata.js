@@ -6,10 +6,20 @@ const links = {
   email: "mailto:james@jamesthomasonjr.com",
 };
 
+const author = {
+  name: "James Thomason, Jr.",
+  shortName: "James Thomason, Jr.",
+  email: "james@jamesthomasonjr.com",
+  jobTitle: "Founding Engineer (Independent)",
+  tagline: "Software engineer building developer tools and human + agent systems.",
+};
+
+const siteUrl = "https://jamesthomasonjr.com";
+
 module.exports = function() {
   return {
     site: {
-      url: "https://jamesthomasonjr.com",
+      url: siteUrl,
       year: new Date().getFullYear(),
       title: "James Thomason, Jr. — Developer tools and agent systems",
       description:
@@ -17,12 +27,19 @@ module.exports = function() {
       links,
     },
 
-    author: {
-      name: "James Thomason, Jr.",
-      shortName: "James Thomason, Jr.",
-      email: "james@jamesthomasonjr.com",
-      jobTitle: "Founding Engineer (Independent)",
-      tagline: "Software engineer building developer tools and human + agent systems.",
+    author,
+
+    // Rendered through Nunjucks' dump filter so values are JSON-encoded
+    // rather than string-interpolated into the script block.
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: author.name,
+      url: siteUrl + "/",
+      email: author.email,
+      jobTitle: author.jobTitle,
+      description: author.tagline,
+      sameAs: [links.github, links.linkedin, links.stations],
     },
 
     nav: [
@@ -34,18 +51,16 @@ module.exports = function() {
     headerActions: [
       { label: "Building Stations.dev", href: links.stations, status: true },
       { label: "Résumé", href: links.resume },
-      { label: "GitHub", href: links.github, external: true },
+      { label: "GitHub", href: links.github },
     ],
 
     hero: {
       narrative:
         "My work centers on developer interfaces, agent workflows and orchestration, context systems, guardrails, and reliable execution — the parts of agentic software that decide whether it can be trusted with real work.",
-      status:
-        "I'm currently building <a href=\"" + links.stations + "\">Stations.dev</a> as an independent founding engineer, alongside open-source tooling for agentic software.",
       links: [
-        { label: "github/jamesthomasonjr", href: links.github, external: true },
-        { label: "linkedin/jamesthomasonjr", href: links.linkedin, external: true },
-        { label: "stations.dev", href: links.stations, external: true },
+        { label: "github/jamesthomasonjr", href: links.github },
+        { label: "linkedin/jamesthomasonjr", href: links.linkedin },
+        { label: "stations.dev", href: links.stations },
         { label: "Résumé", href: links.resume },
         { label: "james@jamesthomasonjr.com", href: links.email },
       ],
@@ -172,9 +187,9 @@ module.exports = function() {
     },
 
     footerLinks: [
-      { label: "GitHub", href: links.github, external: true },
-      { label: "LinkedIn", href: links.linkedin, external: true },
-      { label: "Stations.dev", href: links.stations, external: true },
+      { label: "GitHub", href: links.github },
+      { label: "LinkedIn", href: links.linkedin },
+      { label: "Stations.dev", href: links.stations },
       { label: "Résumé", href: links.resume },
       { label: "Email", href: links.email },
     ],

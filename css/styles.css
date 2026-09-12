@@ -20,13 +20,16 @@
   --accent-text: #7ef0b1;
   --accent-dim: rgba(93, 228, 155, 0.12);
 
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", Menlo,
-    Consolas, "Liberation Mono", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
 
   --shell: 52rem;
   --gutter: 1.5rem;
+
+  /* Clears the sticky masthead when an in-page link scrolls to a section. */
+  --anchor-offset: 0rem;
 
   --radius: 3px;
 }
@@ -76,8 +79,14 @@ body {
 
 a {
   color: var(--text);
-  text-decoration-color: var(--border-strong);
+  text-decoration-color: currentColor;
   text-underline-offset: 0.2em;
+}
+
+.link {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
 }
 
 a:hover {
@@ -105,9 +114,12 @@ strong {
 
 .skip-link {
   position: absolute;
-  left: -9999px;
-  top: 0;
-  z-index: 10;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
   padding: 0.6rem 1rem;
   background: var(--bg-elevated);
   border: 1px solid var(--border-strong);
@@ -118,8 +130,24 @@ strong {
 }
 
 .skip-link:focus {
+  position: fixed;
   left: 1rem;
   top: 1rem;
+  z-index: 10;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+}
+
+/* Focus lands here from the skip link; the scroll is the visible feedback. */
+#main:focus {
+  outline: none;
+}
+
+#main {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 /* Shared bits ------------------------------------------------------------- */
@@ -150,14 +178,23 @@ strong {
 .masthead {
   border-bottom: 1px solid var(--border);
   background: rgba(11, 13, 13, 0.9);
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  backdrop-filter: blur(8px);
+}
+
+/*
+ * The masthead only sticks once it fits on one row. Below that the identity,
+ * section nav, and action pills wrap to two or three rows, which would cover
+ * whatever an in-page link scrolls to.
+ */
+@media (min-width: 64rem) {
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    backdrop-filter: blur(8px);
+  }
 }
 
 .masthead__inner {
-  max-width: 72rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -295,7 +332,7 @@ strong {
 
 .section {
   padding-block: 3.25rem;
-  scroll-margin-top: 4.5rem;
+  scroll-margin-top: var(--anchor-offset);
   border-bottom: 1px solid var(--border);
 }
 
@@ -424,7 +461,7 @@ strong {
 
 .grid--projects {
   margin-top: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .card {
@@ -577,8 +614,15 @@ strong {
 
 .grid--outside {
   margin-top: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+}
+
+@media (min-width: 40rem) {
+  .grid--projects,
+  .grid--outside {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .soft-card {
@@ -637,11 +681,13 @@ strong {
 
 /* Narrow viewports -------------------------------------------------------- */
 
-@media (max-width: 40rem) {
-  .masthead {
-    position: static;
+@media (min-width: 64rem) {
+  :root {
+    --anchor-offset: 4.5rem;
   }
+}
 
+@media (max-width: 40rem) {
   .masthead__inner {
     gap: 0.75rem 1rem;
   }
