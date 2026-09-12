@@ -573,46 +573,6 @@ strong {
   font-size: 1.02rem;
 }
 
-/* Earlier work ------------------------------------------------------------ */
-
-.earlier {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1.5rem 2.5rem;
-}
-
-.earlier__item {
-  padding-left: 1.25rem;
-  border-left: 2px solid var(--border-strong);
-}
-
-.earlier__name {
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.earlier__description {
-  margin-top: 0.25rem;
-  font-size: 1rem;
-}
-
-.earlier__link {
-  margin-top: 0.35rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-}
-
-.earlier__link a {
-  color: var(--text-secondary);
-  text-decoration: none;
-}
-
-.earlier__link a:hover {
-  color: var(--accent-text);
-  text-decoration: underline;
-}
-
 /* Outside software -------------------------------------------------------- */
 
 .grid--outside {

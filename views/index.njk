@@ -185,32 +185,9 @@
       </dl>
     </section>
 
-    <section class="section" id="earlier" aria-labelledby="earlier-heading">
-      <div class="section__head">
-        <span class="section__index" aria-hidden="true">04 //</span>
-        <h2 class="section__title" id="earlier-heading">Earlier Work</h2>
-      </div>
-
-      <ul class="earlier">
-        {%- for item in earlier.items %}
-        <li class="earlier__item">
-          <h3 class="earlier__name">{{ item.name }}</h3>
-          <p class="earlier__description">{{ item.description }}</p>
-          {%- if item.repo %}
-          <p class="earlier__link">
-            <a href="{{ item.repo.href }}" rel="noopener">{{ item.repo.label }} <span aria-hidden="true">&#8599;</span></a>
-          </p>
-          {%- endif %}
-        </li>
-        {%- endfor %}
-      </ul>
-
-      <p class="note">{{ earlier.note }}</p>
-    </section>
-
     <section class="section" id="outside" aria-labelledby="outside-heading">
       <div class="section__head">
-        <span class="section__index" aria-hidden="true">05 //</span>
+        <span class="section__index" aria-hidden="true">04 //</span>
         <h2 class="section__title" id="outside-heading">Outside Software</h2>
       </div>
 

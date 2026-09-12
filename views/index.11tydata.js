@@ -148,22 +148,6 @@ module.exports = function() {
       },
     ],
 
-    earlier: {
-      items: [
-        {
-          name: "chai-each",
-          description: "A chai plugin for making assertions against each item in an array.",
-          repo: { label: "github/jamesthomasonjr/chai-each", href: "https://github.com/jamesthomasonjr/chai-each" },
-        },
-        {
-          name: "Hal / hal-core",
-          description:
-            "Build and deployment orchestration tooling I developed while at Quicken Loans.",
-        },
-      ],
-      note: "Older projects remain available as archived repositories on GitHub.",
-    },
-
     outside: {
       intro:
         "I'm a dad, gamer, homebrewer, and habitual tinkerer. Most of my side projects begin because I want a tool that doesn't quite exist yet.",
