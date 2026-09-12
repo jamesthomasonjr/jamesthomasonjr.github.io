@@ -1,51 +1,242 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% if main.title -%}
-    <title>{{ main.title }}</title>
-  {%- endif %}
-  {% if main.description -%}
-    <meta name="description" content="{{ main.description }}">
-  {%- endif %}
-  {% if main.author.name -%}
-    <meta name="author" content="{{ main.author.name }}">
-  {%- endif %}
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ author.name }}">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0d0d">
 
-  <link rel="stylesheet" href="/css/styles.css?v=1.0.3">
+  <link rel="canonical" href="{{ site.url }}/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:url" content="{{ site.url }}/">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="/css/styles.css?v=2.0.0">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ author.name }}",
+    "url": "{{ site.url }}/",
+    "email": "{{ author.email }}",
+    "jobTitle": "{{ author.jobTitle }}",
+    "description": "{{ author.tagline }}",
+    "sameAs": [
+      "{{ site.links.github }}",
+      "{{ site.links.linkedin }}",
+      "{{ site.links.stations }}"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header>
-  </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="main main--splash">
+  <header class="masthead">
+    <div class="masthead__inner shell">
+      <a class="masthead__id" href="/">
+        <span class="masthead__name">{{ author.shortName }}</span>
+        <span class="masthead__slash" aria-hidden="true">//</span>
+        <span class="masthead__role">dev</span>
+      </a>
 
-    {% if main.nav -%}
-      <nav class="main__nav">
-        <ul class="nav">
-          {%- for title, url in main.nav %}
-            <li class="nav__item">
-              <a class="nav__link" href="{{ url }}">{{ title }}</a>
-            </li>
+      <nav class="masthead__nav" aria-label="Sections">
+        <ul class="navlist">
+          {%- for item in nav %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
           {%- endfor %}
         </ul>
       </nav>
-    {% endif -%}
 
-    {%- if main.author.name %}
-      <section class="main__title">
-        <h1>{{ main.author.name }}</h1>
-        {% if main.author.titles -%}
-          <h2>{{ main.author.titles | join(' | ') }}</h2>
-        {%- endif %}
-      </section>
-    {%- endif -%}
+      <div class="masthead__actions">
+        {%- for action in headerActions %}
+        <a class="pill{% if action.status %} pill--status{% endif %}" href="{{ action.href }}"{% if action.external %} rel="noopener"{% endif %}>
+          {%- if action.status %}<span class="dot" aria-hidden="true"></span>{% endif -%}
+          {{ action.label }}
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+  </header>
+
+  <main class="shell" id="main">
+
+    <section class="hero" aria-labelledby="hero-name">
+      <h1 class="hero__name" id="hero-name">{{ author.name }}</h1>
+      <p class="hero__tagline">{{ author.tagline }}</p>
+
+      <div class="hero__body">
+        <p>{{ hero.narrative }}</p>
+        <p>{{ hero.status | safe }}</p>
+      </div>
+
+      <ul class="chips" aria-label="Profiles and contact">
+        {%- for link in hero.links %}
+        <li>
+          <a class="chip" href="{{ link.href }}"{% if link.external %} rel="noopener"{% endif %}>{{ link.label }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">01 //</span>
+        <h2 class="section__title" id="work-heading">Current Work</h2>
+      </div>
+
+      <article class="flagship panel">
+        <div class="flagship__head">
+          <h3 class="flagship__name">{{ flagship.name }}</h3>
+          <p class="flagship__status">
+            <span class="dot" aria-hidden="true"></span>
+            {{ flagship.status }} <span class="sep" aria-hidden="true">//</span> {{ flagship.role }}
+          </p>
+        </div>
+
+        <p class="flagship__tagline">{{ flagship.tagline }}</p>
+        <p class="flagship__description">{{ flagship.description }}</p>
+
+        <ul class="tags" aria-label="Core primitives">
+          {%- for primitive in flagship.primitives %}
+          <li class="tag">{{ primitive }}</li>
+          {%- endfor %}
+        </ul>
+
+        <p class="flagship__link">
+          <a href="{{ flagship.link.href }}" rel="noopener">{{ flagship.link.label }} <span aria-hidden="true">&rarr;</span></a>
+        </p>
+      </article>
+
+      <ul class="grid grid--projects">
+        {%- for project in projects %}
+        <li>
+          <article class="card panel">
+            <div class="card__head">
+              <h3 class="card__name">{{ project.name }}</h3>
+              <span class="status status--{{ project.status }}">{{ project.status }}</span>
+            </div>
+            <p class="card__tagline">{{ project.tagline }}</p>
+            <p class="card__description">{{ project.description }}</p>
+            {%- if project.repo %}
+            <p class="card__foot">
+              <a href="{{ project.repo.href }}" rel="noopener">{{ project.repo.label }} <span aria-hidden="true">&#8599;</span></a>
+            </p>
+            {%- else %}
+            <p class="card__foot card__foot--note">{{ project.note }}</p>
+            {%- endif %}
+          </article>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">02 //</span>
+        <h2 class="section__title" id="about-heading">About</h2>
+      </div>
+
+      <p class="prose">{{ about.narrative }}</p>
+
+      <div class="panel trajectory">
+        <h3 class="trajectory__title">Trajectory</h3>
+        <dl class="trajectory__list">
+          {%- for entry in about.trajectory %}
+          <div class="trajectory__entry">
+            <dt>
+              <span class="trajectory__period">{{ entry.period }}</span>
+              <span class="trajectory__dates">{{ entry.dates }}</span>
+            </dt>
+            <dd>
+              <strong>{{ entry.role }}</strong>, {{ entry.org }} — {{ entry.summary }}
+            </dd>
+          </div>
+          {%- endfor %}
+        </dl>
+      </div>
+
+      <p class="prose prose--philosophy">
+        <strong>Core engineering philosophy:</strong> {{ about.philosophy }}
+      </p>
+    </section>
+
+    <section class="section" id="profile" aria-labelledby="profile-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">03 //</span>
+        <h2 class="section__title" id="profile-heading">Technical Profile</h2>
+      </div>
+
+      <dl class="panel matrix">
+        {%- for row in profile %}
+        <div class="matrix__row">
+          <dt class="matrix__label">{{ row.label }}</dt>
+          <dd class="matrix__values">{{ row.values | join(' · ') }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+    </section>
+
+    <section class="section" id="earlier" aria-labelledby="earlier-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">04 //</span>
+        <h2 class="section__title" id="earlier-heading">Earlier Work</h2>
+      </div>
+
+      <ul class="earlier">
+        {%- for item in earlier.items %}
+        <li class="earlier__item">
+          <h3 class="earlier__name">{{ item.name }}</h3>
+          <p class="earlier__description">{{ item.description }}</p>
+          {%- if item.repo %}
+          <p class="earlier__link">
+            <a href="{{ item.repo.href }}" rel="noopener">{{ item.repo.label }} <span aria-hidden="true">&#8599;</span></a>
+          </p>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+
+      <p class="note">{{ earlier.note }}</p>
+    </section>
+
+    <section class="section" id="outside" aria-labelledby="outside-heading">
+      <div class="section__head">
+        <span class="section__index" aria-hidden="true">05 //</span>
+        <h2 class="section__title" id="outside-heading">Outside Software</h2>
+      </div>
+
+      <p class="prose">{{ outside.intro }}</p>
+
+      <ul class="grid grid--outside">
+        {%- for card in outside.cards %}
+        <li class="soft-card">
+          <h3 class="soft-card__name">{{ card.name }}</h3>
+          <p class="soft-card__description">{{ card.description }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </section>
 
   </main>
 
-  <footer>
+  <footer class="footer">
+    <div class="footer__inner shell">
+      <p class="footer__copy">&copy; {{ site.year }} {{ author.name }}</p>
+      <ul class="footer__links">
+        {%- for link in footerLinks %}
+        <li><a href="{{ link.href }}"{% if link.external %} rel="noopener"{% endif %}>{{ link.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
