@@ -1,6 +1,6 @@
 const links = {
   github: "https://github.com/jamesthomasonjr",
-  linkedin: "https://www.linkedin.com/in/jamesthomasonjr",
+  linkedin: "https://www.linkedin.com/in/jamesthomasonjr/",
   stations: "https://stations.dev",
   resume: "/resume/",
   email: "mailto:james@jamesthomasonjr.com",
@@ -52,6 +52,7 @@ module.exports = function() {
       { label: "Building Stations.dev", href: links.stations, status: true },
       { label: "Résumé", href: links.resume },
       { label: "GitHub", href: links.github },
+      { label: "LinkedIn", href: links.linkedin },
     ],
 
     hero: {
