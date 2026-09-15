@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>James Thomason, Jr — Résumé</title>
+    <meta name="description" content="Senior Full-Stack Engineer specializing in developer platforms, cloud infrastructure, and agent-native systems. Experienced designing multi-tenant SaaS platforms, AI-powered developer tooling, cloud-native services, and internal engineering systems that improve developer productivity and accelerate delivery." />
+    <!-- The résumé app marks itself noindex; this published copy is the canonical one. -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jamesthomasonjr.com/resume/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="James Thomason, Jr — Résumé" />
+    <meta property="og:description" content="Senior Full-Stack Engineer specializing in developer platforms, cloud infrastructure, and agent-native systems. Experienced designing multi-tenant SaaS platforms, AI-powered developer tooling, cloud-native services, and internal engineering systems that improve developer productivity and accelerate delivery." />
+    <meta property="og:url" content="https://jamesthomasonjr.com/resume/" />
+    <style>
+:root{--page-width: 8.5in;--page-height: 11in;--page-margin: .6in;--page-margin-top-continued: .45in;--chrome-bg: #eceef1;--chrome-fg: #1f2328;--chrome-border: #d3d7dd}@media(prefers-color-scheme:dark){:root{--chrome-bg: #1b1d21;--chrome-fg: #e6e8eb;--chrome-border: #33373d}}*,*:before,*:after{box-sizing:border-box}html,body{margin:0;padding:0}body{background:var(--chrome-bg);color:var(--chrome-fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}.toolbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;padding:.6rem 1rem;background:color-mix(in srgb,var(--chrome-bg) 85%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--chrome-border);font-size:.85rem}.toolbar__field{display:flex;gap:.4rem;align-items:center}.toolbar label{opacity:.7}.toolbar select,.toolbar button{font:inherit;color:inherit;padding:.3rem .5rem;border:1px solid var(--chrome-border);border-radius:6px;background:transparent}.toolbar button{cursor:pointer}.toolbar__spacer{flex:1}.toolbar__note{opacity:.6}.sheet{display:flex;justify-content:center;padding:1.5rem 1rem 3rem}.page{width:var(--page-width);min-height:var(--page-height);padding:var(--page-margin);background:#fff;color:#111;box-shadow:0 1px 2px #0000001f,0 8px 30px #0000001a}.error{margin:3rem auto;max-width:40rem;padding:1rem 1.25rem;border-left:3px solid #c0392b;background:#fff;color:#111;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}@page{size:letter;margin:var(--page-margin-top-continued) 0 0 0}@media print{:root{--chrome-bg: #fff}body{background:#fff}.toolbar{display:none}.sheet{padding:0}.page{width:auto;min-height:0;box-shadow:none;padding:var(--page-margin);padding-top:calc(var(--page-margin) - var(--page-margin-top-continued));padding-bottom:calc(var(--page-margin) - var(--page-margin-top-continued))}}
+
+.page{--ink: #14171a;--muted: #5b6670;--rule: #d8dce0;--accent: #1f4e79;font-family:Charter,Iowan Old Style,Georgia,Times New Roman,serif;font-size:10.5pt;line-height:1.45;color:var(--ink)}.page a.link{color:var(--accent);text-decoration:none}.page a.link:hover{text-decoration:underline}.resume__header{margin-bottom:1.1rem;padding-bottom:.7rem;border-bottom:2px solid var(--ink)}.resume__name{margin:0;font-size:22pt;font-weight:600;letter-spacing:.01em}.resume__label{margin:.15rem 0 0;font-size:11.5pt;color:var(--muted)}.resume__contact{display:flex;flex-wrap:wrap;gap:.35rem .9rem;margin:.55rem 0 0;padding:0;list-style:none;font-size:9pt;color:var(--muted)}.section{margin-top:1rem;break-inside:auto}.section__title{margin:0 0 .45rem;padding-bottom:.15rem;border-bottom:1px solid var(--rule);font-size:10pt;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--accent)}.resume__summary{margin:0}.entry{margin-bottom:.75rem;break-inside:avoid}.entry:last-child{margin-bottom:0}.entry__head{display:flex;gap:1rem;align-items:baseline;justify-content:space-between}.entry__title{margin:0;font-size:11pt;font-weight:700}.entry__dates{flex:none;font-size:9pt;color:var(--muted);font-variant-numeric:tabular-nums}.entry__subhead{font-size:10pt;font-style:italic;color:var(--muted)}.entry__summary{margin:.3rem 0 0}.entry__highlights{margin:.3rem 0 0;padding-left:1.1rem}.entry__highlights li{margin-bottom:.15rem}.skills{margin:0}.skill{display:grid;grid-template-columns:10rem 1fr;gap:0 .75rem;margin-bottom:.25rem;break-inside:avoid}.skill__name{font-weight:700}.skill__keywords{margin:0;color:var(--ink)}.keywords,.inline-list{display:flex;flex-wrap:wrap;gap:.25rem .5rem;margin:.3rem 0 0;padding:0;list-style:none;font-size:9pt;color:var(--muted)}.keyword{padding:.05rem .4rem;border:1px solid var(--rule);border-radius:999px}
+/* Published-page chrome. Screen only — print is the document alone. */
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1rem 0;
+  font-size: 0.9rem;
+}
+.resume-actions a {
+  color: inherit;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--chrome-border);
+  border-radius: 6px;
+  text-decoration: none;
+}
+.resume-actions a:hover,
+.resume-actions a:focus-visible {
+  border-color: currentColor;
+}
+.resume-actions a[download] {
+  font-weight: 600;
+}
+@media print {
+  .resume-actions {
+    display: none;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <nav class="resume-actions" aria-label="Résumé actions">
+      <a href="/resume.pdf" download>Download PDF</a>
+      <a href="/">jamesthomasonjr.com</a>
+    </nav>
+    <div class="sheet"><main class="page">
+    <article class="resume">
+      
+    <header class="resume__header">
+      <h1 class="resume__name">James Thomason, Jr</h1>
+      <p class="resume__label">Senior Full-Stack Engineer | Platform Engineering | Agent-Native Systems</p>
+      <ul class="resume__contact"><li><a class="link" href="https://jamesthomasonjr.com" rel="noreferrer">jamesthomasonjr.com</a></li><li><a class="link" href="https://github.com/jamesthomasonjr" rel="noreferrer">GitHub: jamesthomasonjr</a></li><li><a class="link" href="https://www.linkedin.com/in/jamesthomasonjr" rel="noreferrer">LinkedIn: jamesthomasonjr</a></li><li><a class="link" href="https://stackoverflow.com/users/2117356/jamesthomasonjr" rel="noreferrer">Stack Overflow: jamesthomasonjr</a></li></ul>
+    </header>
+  
+      
+    <section class="section section--summary">
+      <h2 class="section__title">Summary</h2>
+      <div class="section__body"><p class="resume__summary">Senior Full-Stack Engineer specializing in developer platforms, cloud infrastructure, and agent-native systems. Experienced designing multi-tenant SaaS platforms, AI-powered developer tooling, cloud-native services, and internal engineering systems that improve developer productivity and accelerate delivery.</p></div>
+    </section>
+  
+      
+    <section class="section section--work">
+      <h2 class="section__title">Experience</h2>
+      <div class="section__body">
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Founding Engineer (Independent)</h3>
+        <span class="entry__dates">Aug 2026 – Present</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="https://stations.dev" rel="noreferrer">Stations.dev</a></div>
+      <p class="entry__summary">Building a multi-tenant work coordination platform where humans and autonomous agents securely execute shared workflows.</p>
+      <ul class="entry__highlights"><li>Architected a multi-tenant SaaS platform spanning 7 services and 250+ REST endpoints behind a NestJS gateway using shared API contracts in an Nx monorepo.</li><li>Designed shared human/agent workflows with common authorization, approval, leasing, and artifact requirements, enabling human-in-the-loop automation.</li><li>Implemented multi-tenant authentication using JWT, OIDC, CASL, PostgreSQL RLS, service authentication, and enterprise SSO.</li><li>Built AWS infrastructure with Kubernetes, OpenTofu, GitHub Actions, Docker, and OpenTelemetry.</li><li>Delivered a Next.js web app, CLI, and MCP server over a shared public API.</li><li>Established a specification-first AI engineering workflow spanning 34 design specs, 73 implementation plans, 248 merged PRs, and 2,500+ automated tests while maintaining open-source agent tooling.</li></ul>
+      
+    </div>
+  
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Software Development Engineer II</h3>
+        <span class="entry__dates">Jun 2022 – Aug 2026</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="https://amazon.com" rel="noreferrer">Amazon</a></div>
+      <p class="entry__summary">Built AI workflow platforms, experimentation systems, cloud infrastructure, and developer tooling supporting autonomous and data-driven engineering workflows.</p>
+      <ul class="entry__highlights"><li>Built an AWS Bedrock workflow platform enabling 100+ autonomous workflows with 600+ executions through a visual DAG editor.</li><li>Developed features for an experimentation platform supporting 1,500+ production experiments.</li><li>Built CLI tools, MCP servers, and developer workflows for local development, testing, and deployment.</li><li>Built cloud infrastructure using AWS CDK.</li><li>Automated CI/CD workflows for internal platforms.</li></ul>
+      
+    </div>
+  
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Senior Software Engineer</h3>
+        <span class="entry__dates">Dec 2021 – Jun 2022</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="https://www.activecampaign.com" rel="noreferrer">ActiveCampaign</a></div>
+      <p class="entry__summary">Improved reliability and developer workflows for customer experience automation systems.</p>
+      <ul class="entry__highlights"><li>Built a command-line data seeding tool that made production issues easier to reproduce in local development environments.</li></ul>
+      
+    </div>
+  
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Cloud Engineering Chapter Lead</h3>
+        <span class="entry__dates">Mar 2020 – Dec 2021</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="https://www.vanguard.com" rel="noreferrer">Vanguard</a></div>
+      <p class="entry__summary">Led cloud engineering enablement and migration of enterprise security gates and CI/CD workflows from Bitbucket and Bamboo to GitHub.</p>
+      <ul class="entry__highlights"><li>Maintained enterprise CI/CD pipelines during the migration from Bitbucket and Bamboo to GitHub, minimizing disruption for development teams.</li><li>Helped establish a chapter-based engineering organization focused on technical mentorship, shared practices, and cross-team knowledge transfer.</li><li>Mentored engineers through regular coaching, technical guidance, and career development conversations.</li><li>Fostered continuous learning through discussions on engineering best practices, platform trends, and emerging technologies.</li></ul>
+      
+    </div>
+  
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Software Engineer</h3>
+        <span class="entry__dates">Sep 2017 – Mar 2020</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="https://www.quickenloans.com" rel="noreferrer">Quicken Loans</a></div>
+      <p class="entry__summary">Built deployment orchestration, infrastructure automation, and developer tooling for enterprise software delivery.</p>
+      <ul class="entry__highlights"><li>Built and maintained infrastructure using Terraform and Terragrunt to support enterprise deployment workflows.</li><li>Developed custom deployment targets and orchestration capabilities for CI/CD tooling to support varied application requirements.</li><li>Built and maintained a shared repository of developer tools and automation scripts to improve engineering productivity and standardize workflows.</li><li>Evaluated enterprise tooling through RFCs and architecture reviews, influencing build-versus-buy decisions for internal developer platforms.</li><li>Mentored junior engineers on PHP, object-oriented design, agile development, and pair programming.</li></ul>
+      
+    </div>
+  
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Senior Full Stack Software Engineer</h3>
+        <span class="entry__dates">Aug 2016 – Sep 2017</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="https://www.magicjackforbusiness.com" rel="noreferrer">magicJack</a></div>
+      <p class="entry__summary">Modernized customer-facing and internal service architecture across web, API, and order-processing systems.</p>
+      <ul class="entry__highlights"><li>Designed and implemented a new API architecture to modernize internal services and improve separation between application components.</li><li>Developed a shared library that enabled incremental migration from a monolithic architecture to microservices.</li></ul>
+      
+    </div>
+  
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Software Engineer</h3>
+        <span class="entry__dates">Aug 2015 – Aug 2016</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="https://www.bankofamerica.com" rel="noreferrer">Bank of America</a></div>
+      <p class="entry__summary">Built internal compliance software and reusable frontend components for enterprise applications.</p>
+      <ul class="entry__highlights"><li>Developed reusable frontend libraries for data grids, state history, and loading experiences that became widely adopted across internal applications.</li></ul>
+      
+    </div>
+  
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Software Developer</h3>
+        <span class="entry__dates">May 2014 – Aug 2015</span>
+      </div>
+      <div class="entry__subhead"><a class="link" href="http://www.quickenloans.com" rel="noreferrer">Quicken Loans</a></div>
+      <p class="entry__summary">Built mortgage servicing software while improving local development consistency and onboarding.</p>
+      <ul class="entry__highlights"><li>Created and maintained a reproducible Vagrant-based development environment that standardized local setup and streamlined onboarding.</li></ul>
+      
+    </div>
+  </div>
+    </section>
+  
+      
+      
+    <section class="section section--skills">
+      <h2 class="section__title">Skills</h2>
+      <div class="section__body"><dl class="skills">
+      
+          <div class="skill">
+            <dt class="skill__name">Platform Engineering</dt>
+            <dd class="skill__keywords">Developer platforms, Distributed systems, Multi-tenant SaaS, Service decomposition, Event-driven workflows, Transactional outbox, API gateways / BFF, RLS, Enterprise SSO, JWT / mTLS, RBAC, Signed webhooks</dd>
+          </div>
+        
+          <div class="skill">
+            <dt class="skill__name">Cloud &amp; DevOps</dt>
+            <dd class="skill__keywords">AWS, Kubernetes, OpenTofu, Terraform, AWS CDK, Docker, GitHub Actions, OpenTelemetry, CI/CD</dd>
+          </div>
+        
+          <div class="skill">
+            <dt class="skill__name">AI Systems</dt>
+            <dd class="skill__keywords">AI agents, Multi-agent systems, Agent-native platforms, Human-in-the-loop, Bedrock, RAG, MCP</dd>
+          </div>
+        
+          <div class="skill">
+            <dt class="skill__name">AI Engineering Workflow</dt>
+            <dd class="skill__keywords">Specification-driven engineering, Multi-agent development, AI-assisted code review, Implementation planning, Architecture-aware development, Agent skill libraries, Claude Code, Codex, Cursor</dd>
+          </div>
+        
+          <div class="skill">
+            <dt class="skill__name">Backend</dt>
+            <dd class="skill__keywords">TypeScript, Node, NestJS, PostgreSQL, Go, Java, Redis, REST, gRPC</dd>
+          </div>
+        
+          <div class="skill">
+            <dt class="skill__name">Frontend</dt>
+            <dd class="skill__keywords">React, Next.js, TypeScript, Tailwind, React Flow</dd>
+          </div>
+        
+    </dl></div>
+    </section>
+  
+      
+      
+      
+      
+      
+      
+    <section class="section section--languages">
+      <h2 class="section__title">Languages</h2>
+      <div class="section__body"><ul class="inline-list">
+      <li>English — Native speaker</li>
+    </ul></div>
+    </section>
+  
+      
+    </article>
+  </main></div>
+  </body>
+</html>
