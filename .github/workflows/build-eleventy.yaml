@@ -19,21 +19,65 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      # Checkout of jamesthomasonjr/resume, the source of truth for résumé
+      # content and rendering. Never committed here.
+      RESUME_DIR: resume-src
+      RESUME_ID: public
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Check résumé repository access
+        env:
+          RESUME_REPO_TOKEN: ${{ secrets.RESUME_REPO_TOKEN }}
+        run: |
+          if [ -z "$RESUME_REPO_TOKEN" ]; then
+            echo "::error::RESUME_REPO_TOKEN is not set. It needs a fine-grained personal access token with read-only Contents access to jamesthomasonjr/resume (repository secret)."
+            exit 1
+          fi
+
+      - name: Checkout Résumé
+        uses: actions/checkout@v4
+        with:
+          repository: jamesthomasonjr/resume
+          token: ${{ secrets.RESUME_REPO_TOKEN }}
+          path: ${{ env.RESUME_DIR }}
+          persist-credentials: false
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            ${{ env.RESUME_DIR }}/package-lock.json
 
       - name: Install Dependencies
         run: npm ci
 
+      - name: Install Résumé Dependencies
+        working-directory: ${{ env.RESUME_DIR }}
+        run: npm ci
+
+      - name: Install Chromium
+        working-directory: ${{ env.RESUME_DIR }}
+        run: npx playwright install --with-deps chromium
+
+      - name: Build Résumé App
+        working-directory: ${{ env.RESUME_DIR }}
+        run: npm run build
+
+      - name: Export Résumé PDF
+        working-directory: ${{ env.RESUME_DIR }}
+        run: npm run export -- --resume "$RESUME_ID" --format pdf --out out
+
       - name: Build
         run: npm run build
+
+      - name: Publish Résumé
+        run: npm run build:resume -- --resume-dir "$RESUME_DIR" --resume "$RESUME_ID"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
