@@ -16,7 +16,7 @@
  *   npm ci
  *   npx playwright install --with-deps chromium
  *   npm run build
- *   npm run export -- --resume base --format pdf --out out
+ *   npm run export -- --resume public --format pdf --out out
  *
  * Produces:
  *
@@ -38,7 +38,7 @@ const { values } = parseArgs({
   options: {
     'resume-dir': { type: 'string' },
     out: { type: 'string', default: '_site' },
-    resume: { type: 'string', default: 'base' },
+    resume: { type: 'string', default: 'public' },
     theme: { type: 'string' },
     'site-url': { type: 'string', default: 'https://jamesthomasonjr.com' },
     help: { type: 'boolean', short: 'h', default: false },
@@ -52,7 +52,7 @@ if (values.help || !values['resume-dir']) {
       '',
       '      --resume-dir <path>  Checkout of jamesthomasonjr/resume, already built',
       '      --out <dir>          Site output directory. Default: _site',
-      '      --resume <id>        Document to publish. Default: base',
+      '      --resume <id>        Document to publish. Default: public',
       '      --theme <id>         Theme id. Default: the document\'s own meta.theme',
       '      --site-url <url>     Origin used for the canonical link',
     ].join('\n'),
@@ -164,8 +164,11 @@ try {
     fail(`The app rendered "${rendered.selectedResume}", not "${resumeId}"`);
   }
 
+  // The app titles a document by its variant label ("Public"), which is an
+  // internal name for the picker. This page is simply the résumé.
+  const title = rendered.name ? `${rendered.name} — Résumé` : rendered.title;
   const description = rendered.summary || [rendered.name, rendered.label].filter(Boolean).join(' — ');
-  const html = renderPage(rendered, description);
+  const html = renderPage({ ...rendered, title }, description);
 
   await mkdir(join(outDir, 'resume'), { recursive: true });
   await writeFile(join(outDir, 'resume', 'index.html'), html);

@@ -23,7 +23,7 @@ jobs:
       # Checkout of jamesthomasonjr/resume, the source of truth for résumé
       # content and rendering. Never committed here.
       RESUME_DIR: resume-src
-      RESUME_ID: base
+      RESUME_ID: public
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4

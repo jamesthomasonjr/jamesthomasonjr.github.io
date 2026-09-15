@@ -12,11 +12,16 @@ npm run build      # _site/
 
 ## Résumé
 
-`/resume/` and `/resume.pdf` publish the **base** résumé from
+`/resume/` and `/resume.pdf` publish the **public** résumé from
 [`jamesthomasonjr/resume`](https://github.com/jamesthomasonjr/resume), which
 stays the single source of truth for résumé content and rendering. Nothing
 generated is committed here: the deploy checks that repository out, builds it,
 and assembles the artifacts into `_site/`.
+
+`public` is the `base` document with email, phone, and location removed. It
+carries no content of its own, so the published page is the standard résumé
+minus the contact details that do not belong on an indexable page; the profile
+links it keeps, and the site's own email link, are the way to reach me.
 
 `scripts/build-resume.mjs` does the assembling. It renders nothing of its own —
 it loads the résumé app that project's own `npm run build` produced, lets that
@@ -32,8 +37,9 @@ document under `data/` — tailored overlays such as `platform` and
 markup of the single rendered document is.
 
 A change to `data/base.json` over there reaches the site on the next deploy
-here, with no content copied by hand. Run this workflow from the Actions tab
-(`workflow_dispatch`) to publish a résumé change without touching the site.
+here — `public` inherits it — with no content copied by hand. Run this workflow
+from the Actions tab (`workflow_dispatch`) to publish a résumé change without
+touching the site.
 
 ### Deploy access
 
@@ -52,7 +58,7 @@ cd ../resume
 npm ci
 npx playwright install chromium
 npm run build
-npm run export -- --resume base --format pdf --out out
+npm run export -- --resume public --format pdf --out out
 
 cd ../jamesthomasonjr.github.io
 npm run build
